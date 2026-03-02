@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
   <header>
     <div class="header-inner">
       <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
@@ -37,6 +38,7 @@
   </header>
 
   <div class="drawer-overlay" id="drawerOverlay"></div>
+
   <div class="drawer" id="drawer" role="dialog" aria-label="Menú de navegación">
     <div class="drawer-header">
       <div class="drawer-logo">
@@ -49,14 +51,69 @@
 
     <nav>
       <ul>
-        <li><a href="index.html" onclick="closeDrawer()"><span class="nav-icon"></span> Inicio</a></li>
-        <li><a href="#servicios" onclick="closeDrawer()"><span class="nav-icon"></span> Servicios</a></li>
-        <li><a href="#nosotros" onclick="closeDrawer()"><span class="nav-icon"></span> Nosotros</a></li>
-        <li><a href="#proyectos" onclick="closeDrawer()"><span class="nav-icon"></span> Proyectos</a></li>
-        <li><a href="contacto.html" onclick="closeDrawer()"><span class="nav-icon"></span> Contacto</a></li>
+        <li><a href="index.html" onclick="closeDrawer()"></span> Inicio</a></li>
+        <li><a href="#conocemos" onclick="closeDrawer()"></span> Conocemos</a></li>
+        <li><a href="#rifas" onclick="closeDrawer()">Rifas</a></li>
+        <li><a href="#testimonios" onclick="closeDrawer()"> Testimonios</a></li>
+        <li><a href="#ayudanos" onclick="closeDrawer()">Ayudanos</a></li>
+        <li><a href="contacto.html" onclick="closeDrawer()"> Contacto</a></li>
       </ul>
     </nav>
     <div class="drawer-footer">© 2026 Rifadisimos</div>
+  </div>
+
+  <div class="info-bar">
+
+    <!-- Pista de scroll -->
+    <div class="info-bar-track">
+      <div class="info-bar-content" id="infoContent">
+
+        <img src="assets/image/SEGOB.jpg" style="height:28px; mix-blend-mode:screen;">
+
+        <span class="info-item"> Secretaría de Gobernación <strong></strong></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="banner">
+
+    <div class="sec-text">
+      <div class="content">
+        <img class="letras-img" src="assets/image/rifate_mexico.jpg" alt="Letras">
+      </div>
+    </div>
+
+    <div class="sec-item">
+      <div class="item-image-wrap">
+        <img id="articleImg" class="item-image"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sunflower_from_Silesia2.jpg/320px-Sunflower_from_Silesia2.jpg"
+          alt="Artículo" />
+      </div>
+
+      <div class="counter-wrap">
+        <div class="counter-digits" id="counterDigits">
+          <div class="digit">0</div>
+          <div class="digit">1</div>
+          <div class="digit">6</div>
+          <div class="digit">0</div>
+        </div>
+        <div class="counter-label">Contador</div>
+      </div>
+    </div>
+
+    <div class="sec-cta">
+      <div class="brand">
+        <div class="brand-title">RIFADÍSIMOS</div>
+        <div class="brand-sub">Premios extraordinarios</div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary">▶ Participa ahora</button>
+        <button class="btn btn-secondary">→ Siguiente</button>
+      </div>
+      <p class="desc-text">Participa por motos, autos y premios extraordinarios, y convierte cada oportunidad en un
+        impacto real.</p>
+    </div>
   </div>
 
   <!-- Seccion Conocemos -->
@@ -137,8 +194,6 @@
 
   </section>
 
-
-
   <!--Footer-->
   <footer id="contacto">
     <div class="footer-inner">
@@ -176,7 +231,6 @@
       </div>
     </div>
   </footer>
-
 
   <!-- Botón redes sociales -->
   <div class="social-fab-group">
@@ -244,6 +298,90 @@
         socialToggle.classList.remove('active');
       }
     });
+    const database = [
+      { id: 1, nombre: "Moto Clásica 750cc", premio: "Honda Shadow", contador: 160, boletos: 840, imagen: "https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=400&q=80" },
+      { id: 2, nombre: "Auto del Año", premio: "Nissan Frontier", contador: 2347, boletos: 1653, imagen: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=400&q=80" },
+      { id: 3, nombre: "Rifa Navideña", premio: "Smart TV 75\"", contador: 512, boletos: 488, imagen: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&q=80" },
+      { id: 4, nombre: "Premio Especial", premio: "iPhone 16 Pro", contador: 89, boletos: 911, imagen: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&q=80" },
+    ];
+
+    let currentIndex = 0;
+
+    function fetchFromDB(index) {
+      return new Promise(resolve => {
+        setTimeout(() => resolve(database[index % database.length]), 300 + Math.random() * 500);
+      });
+    }
+
+    function setDBStatus(connected) {
+      const dot = document.querySelector('.db-dot');
+      const msg = document.getElementById('dbMsg');
+      dot.style.background = connected ? '#00e5ff' : '#ff4444';
+      dot.style.boxShadow = connected ? '0 0 8px #00e5ff' : '0 0 8px #ff4444';
+      msg.textContent = connected ? 'Conectado — datos en tiempo real' : 'Error de conexión';
+    }
+
+    function animateDigits(newVal) {
+      const val = String(newVal).padStart(4, '0').slice(-4);
+      const digits = document.querySelectorAll('.digit');
+      digits.forEach((d, i) => {
+        if (d.textContent !== val[i]) {
+          d.classList.add('flip');
+          setTimeout(() => { d.textContent = val[i]; d.classList.remove('flip'); }, 150);
+        }
+      });
+    }
+
+    function slideImage(newSrc, newContador) {
+      const img = document.getElementById('articleImg');
+      const counter = document.querySelector('.counter-wrap');
+
+      const hasImage = img.src && !img.src.endsWith('rifadisimos-banner.html') && !img.src.endsWith('/');
+
+      if (hasImage) {
+        img.classList.remove('slide-in');
+        img.classList.add('slide-out');
+        counter.classList.remove('slide-in');
+        counter.classList.add('slide-out');
+
+        setTimeout(() => {
+          img.src = newSrc;
+          animateDigits(newContador);
+
+          img.classList.remove('slide-out');
+          img.classList.add('slide-in');
+          counter.classList.remove('slide-out');
+          counter.classList.add('slide-in');
+        }, 280);
+      } else {
+        img.src = newSrc;
+        animateDigits(newContador);
+        img.classList.add('slide-in');
+        counter.classList.add('slide-in');
+      }
+    }
+
+    async function loadData(index) {
+      try {
+        const row = await fetchFromDB(index);
+        slideImage(row.imagen, row.contador);
+      } catch (e) {
+        console.error('Error al obtener datos', e);
+      }
+    }
+
+    loadData(currentIndex);
+
+    document.querySelector('.btn-secondary').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % database.length;
+      loadData(currentIndex);
+    });
+
+    setInterval(() => {
+      loadData(currentIndex);
+    }, 10000);
+    const content = document.getElementById('infoContent');
+    content.innerHTML += content.innerHTML;
   </script>
 </body>
 
