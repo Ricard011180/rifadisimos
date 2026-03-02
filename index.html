@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rifadisimos</title>
+  <link rel="icon" type="image/png" href="assets/image/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css">
+
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <img src="assets/image/logo.png" alt="">
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#conocemos">Conocemos</a></li>
+          <li><a href="#rifas">Rifas</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#ayudanos">Ayudanos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer" role="dialog" aria-label="Menú de navegación">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <div class="logo-icon" style="width: 100px; height: 100px; margin-left: 40px;">
+          <img src="assets/image/logo.png" alt="">
+        </div>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Cerrar menú">✕</button>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" onclick="closeDrawer()"><span class="nav-icon"></span> Inicio</a></li>
+        <li><a href="#servicios" onclick="closeDrawer()"><span class="nav-icon"></span> Servicios</a></li>
+        <li><a href="#nosotros" onclick="closeDrawer()"><span class="nav-icon"></span> Nosotros</a></li>
+        <li><a href="#proyectos" onclick="closeDrawer()"><span class="nav-icon"></span> Proyectos</a></li>
+        <li><a href="contacto.html" onclick="closeDrawer()"><span class="nav-icon"></span> Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="drawer-footer">© 2026 Rifadisimos</div>
+  </div>
+
+  <!-- Seccion Conocemos -->
+  <section class="about" id="Conocemos">
+    <!-- Quienes somos -->
+    <div class="about-block">
+      <div class="about-text">
+        <span class="overline">Nuestra Historia</span>
+        <h2>¿Quiénes <em>Somos?</em></h2>
+        <p>Rifadísimos, es una empresa 100% mexicana, dedicada a la organización de concursos, juegos de azar, y
+          dinámicas de entretenimiento.
+          Es un proyecto, nacido para rifarse por las diferentes necesidades que se ven en nuestro país, en los
+          distintos sectores de nuestra sociedad. De manera específica, en las diferentes instituciones de beneficencia
+          que existen en nuestro país; las cuales, necesitan una mano extra para seguir operando de forma activa, y así,
+          sigan brindando la ayuda al sector que atienden.
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="assets/image/logo_2.png" alt="Quiénes somos">
+      </div>
+    </div>
+
+    <!-- Mision -->
+    <div class="about-block reverse">
+      <div class="about-text">
+        <span class="overline">Lo que nos mueve</span>
+        <h2>Nuestra <em>Misión</em></h2>
+        <p>Queremos darle una nueva oportunidad a artículos funcionales para que lleguen a tus manos, mientras, juntos,
+          nos rifamos por crear un impacto real. Nos dedicamos a organizar sorteos transparentes donde la emoción de
+          ganar se une al corazón de rifarse por México, destinando una parte de cada boleto a causas que nos mueven a
+          todos.
+        </p>
+        <ul class="about-list">
+
+        </ul>
+      </div>
+      <div class="about-img">
+        <img src="assets/image/logo-mision.png" alt="Misión">
+        <div class="about-img-badge"> Enfocados en resultados</div>
+      </div>
+    </div>
+
+    <!-- Vision -->
+    <div class="about-block">
+      <div class="about-text">
+        <span class="overline">Hacia dónde vamos</span>
+        <h2>Nuestra <em>Visión</em></h2>
+        <p> Nuestra meta es ser ese rincón rifado, donde la confianza y la solidaridad se encuentran. Soñamos con ser
+          una comunidad grande donde cada rifa sea un festejo de honestidad y una prueba de que, cuando nos unimos para
+          jugar, todos nos rifamos por México</p>
+        <ul class="about-list">
+
+        </ul>
+      </div>
+      <div class="about-img">
+        <img src="assets/image/logo-vision.png" alt="Visión">
+        <div class="about-img-badge">Mirando el futuro</div>
+      </div>
+    </div>
+
+    <!-- Objetivos -->
+    <div class="about-block reverse">
+      <div class="about-text">
+        <span class="overline">Nuestras metas</span>
+        <h2>Nuestros <em>Objetivos</em></h2>
+        <p> Crear un espacio rifado lleno de confianza, donde podamos compartir artículos a través de rifas
+          emocionantes, con el compromiso de que cada sorteo sea totalmente rifado y claro dejando una huella rifada en
+          nuestra comunidad a través de la donación a causas sociales.</p>
+        <ul class="about-list">
+
+        </ul>
+      </div>
+      <div class="about-img">
+        <img src="assets/image/logo-mision.png" alt="Objetivos">
+        <div class="about-img-badge"> Metas claras</div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <!--Footer-->
+  <footer id="contacto">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <a href="#inicio" class="logo">
+          <div class="logo-icon-footer">
+            <img src="assets/image/logo.png" alt="" class="logo-footer">
+          </div>
+        </a>
+
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#conocemos">Conocemos</a></li>
+            <li><a href="#rifas">Rifas</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#ayudanos">Ayudanos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="#">📧 email</a></li>
+            <li><a href="#">📞 +52 55 55 55 55 55 </a></li>
+            <li><a href="#">📍 Ciudad de México</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p> &copy; 2026- Todos los derechos reservados <strong>Rifadisimos</strong></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Botón redes sociales -->
+  <div class="social-fab-group">
+    <div class="social-links" id="socialLinks">
+      <a href="https://facebook.com/" target="_blank" class="sfab sfab-fb" title="Facebook">
+        <img src="https://cdn.simpleicons.org/facebook/fff" width="22">
+      </a>
+      <a href="https://instagram.com/" target="_blank" class="sfab sfab-ig" title="Instagram">
+        <img src="https://cdn.simpleicons.org/instagram/fff" width="22">
+      </a>
+      <a href="https://tiktok.com/" target="_blank" class="sfab sfab-tt" title="TikTok">
+        <img src="https://cdn.simpleicons.org/tiktok/fff" width="22">
+      </a>
+    </div>
+    <button class="sfab-main" id="socialToggle" aria-label="Redes sociales">
+      🌐
+    </button>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const drawerClose = document.getElementById('drawerClose');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', true);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+
+    drawerClose.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+
+    const socialToggle = document.getElementById('socialToggle');
+    const socialLinks = document.getElementById('socialLinks');
+
+    socialToggle.addEventListener('click', () => {
+      socialLinks.classList.toggle('open');
+      socialToggle.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.social-fab-group')) {
+        socialLinks.classList.remove('open');
+        socialToggle.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+
+</html>
