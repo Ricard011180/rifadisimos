@@ -1408,7 +1408,7 @@
       /*Banner*/
 
       .banner {
-          height: auto;
+          height: 700px;
           grid-template-columns: 1fr;
           grid-template-rows: auto auto auto;
       }
@@ -1458,6 +1458,11 @@
 
       .brand-title {
           font-size: 1.3rem;
+      }
+
+      .brand-title img {
+          height: 120px;
+          margin: 10px;
       }
 
       .btn {
@@ -1523,8 +1528,8 @@
 
       /*Banner*/
       .sec-text {
-          min-height: 12px;
-          padding: 1px;
+          min-height: 10px;
+          padding: 20px;
       }
 
       .letras-placeholder {
@@ -1548,7 +1553,7 @@
       }
 
       .item-image {
-          max-height: 150px;
+          max-height: 250px;
       }
 
       .digit {
@@ -1575,25 +1580,9 @@
 
       .btn {
           font-size: 0.72rem;
-          padding: 7px 10px;
+          padding: 10px 10px;
       }
 
-      .controls {
-          padding: 14px 16px;
-          border-radius: 10px;
-      }
-
-      .db-status {
-          font-size: 0.72rem;
-      }
-
-      .db-info {
-          gap: 10px;
-      }
-
-      .db-field {
-          font-size: 0.7rem;
-      }
   }
 
   @media (max-width: 360px) {
