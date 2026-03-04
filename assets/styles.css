@@ -28,6 +28,19 @@
       overflow-x: hidden;
   }
 
+  ::-webkit-scrollbar {
+      width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: var(--dark);
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+  }
+
   /* Header */
   header {
       position: sticky;
@@ -124,6 +137,13 @@
 
   }
 
+  .logo-icon-lateral img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+  }
+
   .logo-text {
       color: var(--white);
       font-size: 1.25rem;
@@ -137,6 +157,29 @@
       color: var(--gold);
       letter-spacing: 0.15em;
       font-weight: 400;
+  }
+
+  .logo-wordmark {
+      font-family: 'Balsamiq Sans', cursive;
+      font-size: 1.7rem;
+      letter-spacing: .1em;
+      color: var(--gold);
+      line-height: 1;
+  }
+
+  .logo-wordmark span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .55rem;
+      letter-spacing: .25em;
+      color: rgba(245, 240, 232, .45);
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 2px;
+  }
+
+  .header-inner a {
+      text-decoration: none;
   }
 
   .hamburger {
@@ -926,6 +969,8 @@
       gap: 4px;
   }
 
+
+
   .digit {
       background: (var(--accent));
       border: 1px solid rgba(238, 255, 0, 0.3);
@@ -1670,6 +1715,27 @@
   }
 
   @media (max-width: 560px) {
+
+      .logo-icon img {
+          display: none;
+      }
+
+      .logo-wordmark {
+          font-family: 'Balsamiq Sans', cursive;
+          color: var(--gold);
+          margin-right: 50px;
+
+      }
+
+      .logo-wordmark span {
+          display: block;
+          font-family: 'DM Sans', sans-serif;
+      }
+
+      .header-inner a {
+          text-decoration: none;
+      }
+
       .footer-top {
           flex-direction: column;
       }
