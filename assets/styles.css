@@ -822,7 +822,6 @@
 
   /* ============================================ */
 
-  /* Demo label */
   p {
       color: rgba(255, 255, 255, 0.3);
       font-family: 'Barlow Condensed', sans-serif;
@@ -1138,6 +1137,7 @@
   .instituciones {
       position: relative;
       overflow: hidden;
+      margin-top: 10px;
   }
 
   .wm-bg {
@@ -1682,7 +1682,7 @@
 
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 560px) and (max-width: 400px) {
       .footer-top {
           flex-direction: column;
       }
@@ -1709,7 +1709,6 @@
           font-size: 0.72rem;
       }
 
-      /* Grid de redes en 2 columnas en móvil */
       .social-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 0.75rem;
@@ -1833,7 +1832,7 @@
 
       .title {
           font-family: 'Pirata One', cursive;
-          font-size: clamp(2.2rem, 6vw, 3.8rem);
+          font-size: clamp(4.2rem, 6vw, 4.8rem);
           color: #14a8c8;
           text-shadow: 3px 3px 0 #0d7a96, -1px -1px 0 rgba(0, 0, 0, 0.15);
           letter-spacing: 0.03em;
