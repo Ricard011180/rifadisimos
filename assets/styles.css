@@ -1831,6 +1831,37 @@
 
       }
 
+      .title {
+          font-family: 'Pirata One', cursive;
+          font-size: clamp(2.2rem, 6vw, 3.8rem);
+          color: #14a8c8;
+          text-shadow: 3px 3px 0 #0d7a96, -1px -1px 0 rgba(0, 0, 0, 0.15);
+          letter-spacing: 0.03em;
+          line-height: 1.15;
+          display: block;
+          transform: rotate(-1.5deg);
+      }
+
+      .subtitle {
+          font-family: 'Pinata Marks Rough', cursive;
+          font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+          color: #1ab3d4;
+          letter-spacing: 0.04em;
+          display: block;
+          margin-top: 4px;
+          opacity: 0.85;
+      }
+
+      .title-wrapper::after {
+          content: '';
+          display: block;
+          height: 4px;
+          background: linear-gradient(90deg, transparent 0%, #1ab3d4 20%, #0d7a96 60%, transparent 100%);
+          border-radius: 2px;
+          margin-top: 10px;
+          opacity: 0.6;
+          transform: rotate(-0.5deg);
+      }
   }
 
   @media (max-width: 360px) {
