@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
   <header>
     <div class="header-inner">
       <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
@@ -36,9 +35,7 @@
       </nav>
     </div>
   </header>
-
   <div class="drawer-overlay" id="drawerOverlay"></div>
-
   <div class="drawer" id="drawer" role="dialog" aria-label="Menú de navegación">
     <div class="drawer-header">
       <div class="drawer-logo">
@@ -48,7 +45,6 @@
       </div>
       <button class="drawer-close" id="drawerClose" aria-label="Cerrar menú">✕</button>
     </div>
-
     <nav>
       <ul>
         <li><a href="index.html" onclick="closeDrawer()"></span> Inicio</a></li>
@@ -61,7 +57,6 @@
     </nav>
     <div class="drawer-footer">© 2026 Rifadisimos</div>
   </div>
-
   <div class="info-bar">
     <div class="info-bar-track">
       <div class="info-bar-content" id="infoContent">
@@ -75,13 +70,13 @@
     </div>
   </div>
 
+  <!--Banner de Rifas-->
   <div class="banner">
     <div class="sec-text">
       <div class="content">
         <img class="letras-img" src="assets/image/rifate_mexico.jpg" alt="Letras">
       </div>
     </div>
-
     <div class="sec-item">
       <div class="item-image-wrap">
         <img id="articleImg" />
@@ -97,9 +92,7 @@
         </div>
       </div>
     </div>
-
     <div class="sec-cta">
-
       <div class="brand">
         <div class="brand-title">
           <img src="assets/image/logo.png" alt="">
@@ -107,26 +100,21 @@
         <div class="brand-sub">Premios extraordinarios
         </div>
       </div>
-
       <div class="btn-group">
         <button class="btn btn-primary">▶ Participa ahora</button>
         <button class="btn btn-secondary">→ Siguiente</button>
       </div>
-
       <p class="desc-text">Participa por motos, autos y premios extraordinarios, y convierte cada oportunidad en un
         impacto real.
       </p>
     </div>
   </div>
-
-  <!-- ══ PAGE 1 ══ -->
   <div class="instituciones" id="seccion-instituciones">
     <section class="section">
       <div class="title-wrapper">
         <span class="title">Nos Rifamos Por</span>
         <span class="subtitle">(Instituciones)</span>
       </div>
-
       <div class="description">
         <p>En <strong>RIFADÍSIMOS</strong> destinamos un porcentaje de cada rifa a organizaciones de beneficencia
           verificadas.</p>
@@ -137,14 +125,13 @@
         Conocer más <span class="arrow">→</span>
       </button>
     </section>
-    <!-- Watermark background layer -->
+    <!-- Fondo Instituciones -->
     <div class="wm-bg">
       <img class="w1" src="assets/image/charitable.jpg" alt="" />
       <img class="w2" src="assets/image/foundation.jpg" alt="" />
       <img class="w3" src="assets/image/world.jpg" alt="" />
     </div>
   </div>
-
 
   <!-- Seccion Conocemos -->
   <section class="about" id="Conocemos">
@@ -200,7 +187,6 @@
         <div class="about-img-badge">Mirando el futuro</div>
       </div>
     </div>
-
     <!-- Objetivos -->
     <div class="about-block reverse">
       <div class="about-text">
@@ -210,7 +196,6 @@
           emocionantes, con el compromiso de que cada sorteo sea totalmente rifado y claro dejando una huella rifada en
           nuestra comunidad a través de la donación a causas sociales.</p>
         <ul class="about-list">
-
         </ul>
       </div>
       <div class="about-img">
@@ -218,7 +203,6 @@
         <div class="about-img-badge"> Metas claras</div>
       </div>
     </div>
-
   </section>
 
   <!--Footer-->
@@ -242,7 +226,6 @@
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </div>
-
         <div class="footer-links">
           <h4>Contacto</h4>
           <ul>
@@ -252,7 +235,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p> &copy; 2026- Todos los derechos reservados <strong>Rifadisimos</strong></p>
       </div>
@@ -338,14 +320,6 @@
       return new Promise(resolve => {
         setTimeout(() => resolve(database[index % database.length]), 300 + Math.random() * 500);
       });
-    }
-
-    function setDBStatus(connected) {
-      const dot = document.querySelector('.db-dot');
-      const msg = document.getElementById('dbMsg');
-      dot.style.background = connected ? '#00e5ff' : '#ff4444';
-      dot.style.boxShadow = connected ? '0 0 8px #00e5ff' : '0 0 8px #ff4444';
-      msg.textContent = connected ? 'Conectado — datos en tiempo real' : 'Error de conexión';
     }
 
     function animateDigits(newVal) {
