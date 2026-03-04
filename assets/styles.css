@@ -1682,7 +1682,7 @@
 
   }
 
-  @media (max-width: 560px) and (max-width: 400px) {
+  @media (max-width: 560px) {
       .footer-top {
           flex-direction: column;
       }
