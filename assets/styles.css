@@ -140,7 +140,6 @@
       font-weight: 400;
   }
 
-  /* Hamburger */
   .hamburger {
       display: none;
       flex-direction: column;
@@ -736,9 +735,6 @@
       font-size: 0.75rem;
   }
 
-  /* ============================================
-     BARRA INFORMATIVA — copia este bloque completo
-     ============================================ */
   .info-bar {
       width: 100%;
       height: 44px;
@@ -1115,7 +1111,6 @@
       animation: slideOutLeft 0.3s ease-in forwards;
   }
 
-  /* Contador: misma animación pero con pequeño delay para entrar después de la imagen */
   .counter-wrap.slide-in {
       animation: slideInLeft 0.5s 0.08s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
@@ -1138,6 +1133,176 @@
 
   .digit.flip {
       animation: flipIn 0.3s ease forwards;
+  }
+
+  .instituciones {
+      position: relative;
+      overflow: hidden;
+  }
+
+  .wm-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+  }
+
+  .wm-bg img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 50%;
+      filter: grayscale(100%);
+      opacity: 0.18;
+  }
+
+  .wm-bg img.w1 {
+      width: 420px;
+      height: 420px;
+      top: -120px;
+      left: -120px;
+      transform: rotate(-10deg);
+  }
+
+  .wm-bg img.w2 {
+      width: 320px;
+      height: 320px;
+      bottom: -60px;
+      right: -50px;
+      transform: rotate(8deg);
+  }
+
+  .wm-bg img.w3 {
+      width: 280px;
+      height: 280px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(4deg);
+  }
+
+  .section {
+      width: 100%;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+  }
+
+  .section::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #1ab3d4;
+      margin: 0 auto 32px;
+      border-radius: 2px;
+  }
+
+  .title-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 36px;
+  }
+
+  .title {
+      font-family: 'Pirata One', cursive;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      color: #14a8c8;
+      text-shadow: 3px 3px 0 #0d7a96, -1px -1px 0 rgba(0, 0, 0, 0.15);
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+      display: block;
+      transform: rotate(-1.5deg);
+  }
+
+  .subtitle {
+      font-family: 'Pinata Marks Rough', cursive;
+      font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+      color: #1ab3d4;
+      letter-spacing: 0.04em;
+      display: block;
+      margin-top: 4px;
+      opacity: 0.85;
+  }
+
+  .title-wrapper::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: linear-gradient(90deg, transparent 0%, #1ab3d4 20%, #0d7a96 60%, transparent 100%);
+      border-radius: 2px;
+      margin-top: 10px;
+      opacity: 0.6;
+      transform: rotate(-0.5deg);
+  }
+
+  .divider span {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #1ab3d4, transparent);
+  }
+
+  .divider .diamond {
+      width: 8px;
+      height: 8px;
+      background: #1ab3d4;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+  }
+
+  .description {
+      font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+      color: #f7f7f7;
+      line-height: 1.85;
+      max-width: 900px;
+      margin: 0 auto;
+  }
+
+  .description strong {
+      color: #0d7a96;
+      font-weight: 600;
+  }
+
+  .description p {
+      font-family: 'Balsamiq Sans', cursive;
+
+      margin-top: 0px;
+      color: #000;
+      font-size: 25px;
+  }
+
+  .btn-conocer {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 48px;
+      padding: 14px 38px;
+      font-family: 'Pirata One', cursive;
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      color: #f5f5f5;
+      background: linear-gradient(135deg, #1ab3d4 0%, #0d7a96 100%);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(13, 122, 150, 0.35), 0 2px 0 #085f76;
+      transition: transform 0.18s, box-shadow 0.18s;
+  }
+
+  .btn-conocer:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(13, 122, 150, 0.45), 0 2px 0 #085f76;
+  }
+
+  .btn-conocer:active {
+      transform: translateY(1px);
+  }
+
+  .btn-conocer .arrow {
+      transition: transform 0.2s;
+  }
+
+  .btn-conocer:hover .arrow {
+      transform: translateX(5px);
   }
 
   /* footer */
@@ -1474,6 +1639,47 @@
           display: none;
       }
 
+      .wm-bg img {
+          position: absolute;
+          object-fit: cover;
+          border-radius: 50%;
+          filter: grayscale(100%);
+          opacity: 0.08;
+      }
+
+      .wm-bg img.w1 {
+          width: 270px;
+          height: 270px;
+          top: -90px;
+          left: -90px;
+          transform: rotate(-10deg);
+      }
+
+      .wm-bg img.w2 {
+          width: 250px;
+          height: 250px;
+          bottom: -50px;
+          right: -50px;
+          transform: rotate(8deg);
+      }
+
+      .wm-bg img.w3 {
+          width: 230px;
+          height: 230px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(4deg);
+      }
+
+      .section {
+          width: 100%;
+          padding: 30px;
+          text-align: center;
+          position: relative;
+          z-index: 1;
+      }
+
+
   }
 
   @media (max-width: 560px) {
@@ -1581,6 +1787,48 @@
       .btn {
           font-size: 0.72rem;
           padding: 10px 10px;
+      }
+
+
+      .wm-bg img {
+          position: absolute;
+          object-fit: cover;
+          border-radius: 50%;
+          filter: grayscale(100%);
+          opacity: 0.08;
+      }
+
+      .wm-bg img.w1 {
+          width: 270px;
+          height: 270px;
+          top: -120px;
+          left: -120px;
+          transform: rotate(-10deg);
+      }
+
+      .wm-bg img.w2 {
+          width: 250px;
+          height: 250px;
+          bottom: -80px;
+          right: -80px;
+          transform: rotate(8deg);
+      }
+
+      .wm-bg img.w3 {
+          width: 230px;
+          height: 230px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(4deg);
+      }
+
+      .description p {
+          font-family: 'Balsamiq Sans', cursive;
+          margin-top: 0px;
+          color: #000;
+          font-size: 24px;
+          text-align: justify;
+
       }
 
   }
