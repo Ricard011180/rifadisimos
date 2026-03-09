@@ -1931,7 +1931,7 @@
 
       .subtitle {
           font-family: 'Pinata Marks Rough', cursive;
-          font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+          font-size: clamp(3.3rem, 3.5vw, 2.2rem);
           color: #1ab3d4;
           letter-spacing: 0.04em;
           display: block;
