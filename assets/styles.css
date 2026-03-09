@@ -2290,7 +2290,6 @@
       .left-panel {
           min-height: 260px;
           border-right: none;
-          border-bottom: 2px solid rgba(255, 215, 0, 0.18);
       }
 
       .right-panel {
