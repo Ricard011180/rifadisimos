@@ -886,7 +886,6 @@
       display: grid;
       grid-template-columns: 1fr 1.1fr 1fr;
       position: relative;
-      box-shadow: 0 8px 60px rgba(0, 0, 0, 0.7);
       border: 1px solid rgba(255, 255, 255, 0.08);
       background-image: var(--img);
       background-size: cover;
@@ -1191,6 +1190,7 @@
       overflow: hidden;
       background-image: var(--img);
       padding: 1rem 1rem;
+      border: none;
       background-size: cover;
       background-attachment: fixed;
       background-position: center top;
@@ -1271,7 +1271,7 @@
   }
 
   .title {
-      font-family: 'Pirata One', cursive;
+      font-family: 'Pinata Marks Rough', cursive;
       font-size: clamp(2.2rem, 6vw, 3.8rem);
       color: #14a8c8;
       text-shadow: 3px 3px 0 #0d7a96, -1px -1px 0 rgba(0, 0, 0, 0.15);
@@ -1282,7 +1282,7 @@
   }
 
   .subtitle {
-      font-family: 'Pinata Marks Rough', cursive;
+      font-family: 'Balsamiq Sans', cursive;
       font-size: clamp(1.3rem, 3.5vw, 2.2rem);
       color: #1ab3d4;
       letter-spacing: 0.04em;
@@ -1642,6 +1642,7 @@
       .banner {
           height: 700px;
           grid-template-columns: 1fr;
+          border: none;
           grid-template-rows: auto auto auto;
       }
 
