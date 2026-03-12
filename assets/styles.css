@@ -371,7 +371,7 @@
   .about-text {
       padding-left: 2rem;
       position: relative;
-    animation: fadeRight 0.5s 0.25s both;
+      animation: fadeRight 0.5s 0.25s both;
 
   }
 
@@ -423,7 +423,7 @@
       line-height: 1.15;
       margin-bottom: 1.2rem;
   }
-  
+
 
   .about-text h2 em {
       font-style: normal;
@@ -437,7 +437,7 @@
       margin-bottom: 1.5rem;
       text-align: justify;
   }
-  
+
 
   .about-list {
       list-style: none;
@@ -796,7 +796,7 @@
   .info-bar {
       width: 100%;
       height: 44px;
-      background: linear-gradient(90deg, var(--gold) 0%,var(--gold)  100%);
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold) 100%);
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -2134,7 +2134,7 @@
 
   .social-row:nth-child(4) {
       animation-delay: 0.8s;
-      --glow:var(--dark);
+      --glow: var(--dark);
   }
 
   @keyframes rowIn {
@@ -2297,4 +2297,196 @@
       .right-panel {
           padding: 26px 20px 22px;
       }
+  }
+
+
+
+
+  /* Botones de navegacion */
+  :root {
+      --neon-cyan: #00f0ff;
+      --neon-pink: #ff2d78;
+      --neon-green: #00ff99;
+      --neon-yellow: #ffe600;
+      --neon-purple: #bf00ff;
+      --neon-orange: #ff6a00;
+      --bg: #080c14;
+  }
+
+
+
+
+  .nav-buttons {
+      display: flex;
+      gap: 80px;
+      backdrop-filter: blur(8px);
+      background-image: var(--img);
+      padding: 2rem 10rem;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center top;
+  }
+
+
+
+  /* ── Botón base ── */
+  .btn-nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 80px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 6px;
+      border: 1px solid currentColor;
+      overflow: hidden;
+      cursor: pointer;
+      width: 100%;
+      transition: color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s ease forwards;
+  }
+
+  /* En pantallas grandes: tamaño automático */
+  @media (max-width: 560px) {
+
+      .nav-buttons {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+
+      .btn-nav {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 15px 100%;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 5px;
+          text-transform: uppercase;
+          text-decoration: none;
+          border-radius: 6px;
+          border: 1px solid currentColor;
+          overflow: hidden;
+          cursor: pointer;
+          width: 100%;
+          transition: color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+          opacity: 0;
+          transform: translateY(16px);
+          animation: fadeUp 0.5s ease forwards;
+      }
+  }
+
+  /* Relleno que sube desde abajo */
+  .btn-nav::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: currentColor;
+      transition: bottom 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      z-index: 0;
+      color: #d6c80644;
+  }
+
+  .btn-nav:hover::before {
+      bottom: 0;
+  }
+
+  .btn-nav svg,
+  .btn-nav span {
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s ease;
+  }
+
+  .btn-nav:hover {
+      color: var(--yellow);
+      transform: translateY(-3px);
+  }
+
+  .btn-nav:hover svg {
+      stroke: var(--yellow);
+  }
+
+  .btn-nav:active {
+      transform: translateY(0) scale(0.97);
+  }
+
+  /* ── Colores individuales ── */
+  .btn-1,
+  .btn-2,
+  .btn-3,
+  .btn-4,
+  .btn-5,
+  .btn-6 {
+      color: var(--neon-yellow);
+      box-shadow: 0 0 10px rgba(255, 230, 0, 0.3);
+  }
+
+
+
+  .btn-1:hover,
+  .btn-2:hover,
+  .btn-3:hover,
+  .btn-4:hover,
+  .btn-5:hover,
+  .btn-6:hover {
+      box-shadow: 0 0 22px rgba(255, 230, 0, 0.486), 0 0 50px rgba(255, 230, 0, 0.3);
+  }
+
+  /* ── Entrada escalonada ── */
+  .btn-nav:nth-child(1) {
+      animation-delay: 0.05s;
+  }
+
+  .btn-nav:nth-child(2) {
+      animation-delay: 0.12s;
+  }
+
+  .btn-nav:nth-child(3) {
+      animation-delay: 0.19s;
+  }
+
+  .btn-nav:nth-child(4) {
+      animation-delay: 0.26s;
+  }
+
+  .btn-nav:nth-child(5) {
+      animation-delay: 0.33s;
+  }
+
+  .btn-nav:nth-child(6) {
+      animation-delay: 0.40s;
+  }
+
+  @keyframes fadeUp {
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /* ── SVG íconos ── */
+  .btn-nav svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
   }
